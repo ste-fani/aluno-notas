@@ -1,7 +1,5 @@
 package com.stefani.homework.class27;
 
-import java.util.Scanner;
-
 public class Aluno {
 
     String nomeAluno, matricula, curso;
