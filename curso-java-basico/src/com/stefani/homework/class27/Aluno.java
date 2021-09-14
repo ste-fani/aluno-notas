@@ -2,12 +2,66 @@ package com.stefani.homework.class27;
 
 public class Aluno {
 
-    String nomeAluno, matricula, curso;
-    String nomeDisciplinas [];
-    double notasDisciplinas [][];
+    private String nomeAluno;
+    private String matricula;
+    private String curso;
+    private String [] nomeDisciplinas;
+    private double [][] notasDisciplinas;
 
+    public Aluno() {
+        nomeDisciplinas = new String[3];
+        notasDisciplinas = new double[3][4];
+    }
 
-    void exibirInfos() {
+    public Aluno(String nomeAluno, String matricula, String curso) {
+        this.nomeAluno = nomeAluno;
+        this.matricula = matricula;
+        this.curso = curso;
+        this.nomeDisciplinas = new String[3];
+        this.notasDisciplinas = new double[3][4];
+    }
+
+    public String getNomeAluno() {
+        return nomeAluno;
+    }
+
+    public void setNomeAluno(String nomeAluno) {
+        this.nomeAluno = nomeAluno;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public String getCurso() {
+        return curso;
+    }
+
+    public void setCurso(String curso) {
+        this.curso = curso;
+    }
+
+    public String[] getNomeDisciplinas() {
+        return nomeDisciplinas;
+    }
+
+    public void setNomeDisciplinas(String[] nomeDisciplinas) {
+        this.nomeDisciplinas = nomeDisciplinas;
+    }
+
+    public double[][] getNotasDisciplinas() {
+        return notasDisciplinas;
+    }
+
+    public void setNotasDisciplinas(double[][] notasDisciplinas) {
+        this.notasDisciplinas = notasDisciplinas;
+    }
+
+    public void exibirInfos() {
         System.out.println("Nome Completo: " + nomeAluno +
                 "\nMatrícula: " + matricula +
                 "\nCurso: " + curso +
@@ -22,7 +76,7 @@ public class Aluno {
         }
     }
 
-    boolean exibirAprovacao(int indice) {
+    public boolean exibirAprovacao(int indice) {
         double soma = 0;
 
         for (int i = 0; i < notasDisciplinas[indice].length; i++) {
@@ -37,5 +91,13 @@ public class Aluno {
             return false;
         }
 
+    }
+
+    public void setNomeDisciplinaPos(int pos, String nomeDisciplina) {
+        this.nomeDisciplinas[pos] = nomeDisciplina;
+    }
+
+    public void setNomePosIJ(int posI, int posJ, double nota) {
+        this.notasDisciplinas[posI][posJ] = nota;
     }
 }
